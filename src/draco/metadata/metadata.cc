@@ -78,8 +78,18 @@ void Metadata::AddEntryDoubleArray(const std::string &name,
   AddEntry(name, value);
 }
 
+void Metadata::AddEntryStringArray(const std::string &name,
+                                   const std::vector<std::string> &value) {
+  AddEntry(name, value);
+}
+
 bool Metadata::GetEntryDoubleArray(const std::string &name,
                                    std::vector<double> *value) const {
+  return GetEntry(name, value);
+}
+
+bool Metadata::GetEntryStringArray(const std::string &name,
+                                   std::vector<std::string> *value) const {
   return GetEntry(name, value);
 }
 

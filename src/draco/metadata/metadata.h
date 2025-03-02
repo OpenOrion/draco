@@ -124,10 +124,19 @@ class Metadata {
   void AddEntryDoubleArray(const std::string &name,
                            const std::vector<double> &value);
 
+  void AddEntryStringArray(const std::string &name,
+                           const std::vector<std::string> &value);
+ 
+
   // Returns false if Metadata does not contain an entry with a key of |name|.
   // This function does not guarantee that entry's type is a vector of double.
   bool GetEntryDoubleArray(const std::string &name,
                            std::vector<double> *value) const;
+
+  // Returns false if Metadata does not contain an entry with a key of |name|.
+  // This function does not guarantee that entry's type is a vector of std::string.
+  bool GetEntryStringArray(const std::string &name,
+    std::vector<std::string> *value) const;
 
   void AddEntryString(const std::string &name, const std::string &value);
 
